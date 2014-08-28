@@ -112,7 +112,7 @@
 						fWidth = $w.width()*settings.viewportFill;
 					}
 					$data.imgScale = fWidth/$img.width();
-				}	
+				}
 
 				// Calculation goes here
 				var offsetY = $w.scrollTop()-$img.offset().top+0.5*($img.data('imgHeight')*($img.data('imgScale')-1))+0.5*($w.height()-$img.data('imgHeight')*$img.data('imgScale')),
@@ -163,10 +163,10 @@
 							data.imgScale = $w.height()*settings.viewportFill/$img.height();
 						} else {
 							data.imgScale = $w.width()*settings.viewportFill/$img.width();
-						}						
+						}
 					}
 
-					imageProp();					
+					imageProp();
 
 					// Rerun everything on imageload, to overcome issue in Firefox
 					$img.load(imageProp);
@@ -313,7 +313,7 @@
 			// 2. Contains one and ONLY one child
 			// 3. The only child is an image element, <img>
 			// 4. If the element is hidden
-			if($(this).is('a') && $(this).children().length === 1 && $(this).children().is('img') && $(this).css('display') !== 'none' && $(this).parents().css('display') !=='none') {
+			if($(this).is('a') && $(this).children('img').length === 1 && $(this).css('display') !== 'none' && $(this).parents().css('display') !=='none') {
 
 				// Define wrap
 				var $fbInnerWrap = $('<div />', {
@@ -333,7 +333,7 @@
 					.after('<div class="fluidbox-ghost" />')
 					.each(function(){
 						var $img = $(this);
-						
+
 						if ($img.width() > 0 && $img.height() > 0) {
 							// if image is already loaded (from cache)
 							funcCalc($fbItem);
